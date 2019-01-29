@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "key-listener",
+                "projectName": "key-listener",
+                "workingDirectory": "c:\\Users\\DreiP\\source\\repos\\vsc_ext\\crafty\\src\\resources\\key-listener\\key-listener",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "key-listener",
+                "projectName": "key-listener",
+                "workingDirectory": "c:\\Users\\DreiP\\source\\repos\\vsc_ext\\crafty\\src\\resources\\key-listener\\key-listener",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

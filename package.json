@@ -1,0 +1,82 @@
+{
+    "name": "craft-test",
+    "displayName": "Craft Test",
+    "description": "Logitech craft integration for vs code",
+    "version": "0.0.1",
+    "publisher": "dreiparrent",
+    "engines": {
+        "vscode": "^1.26.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.getCrafty",
+        "onCommand:extension.setSelect"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.getCrafty",
+                "title": "Craft"
+            },
+            {
+                "command": "extension.setSelect",
+                "title": "Craft - set select mode"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.setSelect",
+                "key": "ctrl+alt+shift+q",
+                "mac": "cmd+alt+shit+q",
+                "when": "editorTextFocus"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "TypeScript configuration",
+            "properties": {
+                "craft.disableTabControl": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Does not include tabs control"
+                },
+                "craft.useExtendedFunctionality": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add scroll and the bracket thing"
+                },
+                "craft.controllerMethod": {
+                    "type": "string",
+                    "default": "java",
+                    "oneOf": ["none", "java", "keylistener"],
+                    "description": "Add scroll and the bracket thing"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "tslint": "^5.8.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@types/socket.io": "^1.4.36",
+        "@types/websocket": "0.0.39",
+        "keypress": "^0.2.1",
+        "node-key-sender": "^1.0.10",
+        "socket.io": "^2.1.1",
+        "websocket": "^1.0.26"
+    }
+}
